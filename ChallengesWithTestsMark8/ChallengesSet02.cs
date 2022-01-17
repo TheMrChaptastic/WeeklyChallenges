@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengesWithTestsMark8
 {
@@ -7,52 +8,103 @@ namespace ChallengesWithTestsMark8
     {
         public bool CharacterIsALetter(char c)
         {
-            throw new NotImplementedException();
+            var alph = "abcdefghijklmnopqrstuvwxyz";
+            if (alph.Contains(c.ToString().ToLower()))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public bool CountOfElementsIsEven(string[] vals)
         {
-            throw new NotImplementedException();
+            return vals.Length % 2 == 0 ? true : false;
         }
 
         public bool IsNumberEven(int number)
         {
-            throw new NotImplementedException();
+            return number % 2 == 0 ? true : false;
         }
 
         public bool IsNumberOdd(int num)
         {
-            throw new NotImplementedException();
+            return num % 2 == 0 ? false : true;
         }
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-            throw new NotImplementedException();
+            if (numbers != null)
+            {
+                var max = 0.0;
+                var min = 0.0;
+                if (numbers.Count() >= 1)
+                {
+                    min = numbers.ElementAt(0);
+                    max = numbers.ElementAt(0);
+                    if (numbers != null)
+                    {
+                        foreach (var i in numbers)
+                        {
+                            min = i < min ? i : min;
+                            max = i > max ? i : max;
+                        }
+                    }
+                }
+                return min + max;
+            }
+            return 0.0;
         }
 
         public int GetLengthOfShortestString(string str1, string str2)
         {
-            throw new NotImplementedException();
+            return str1.Length < str2.Length ? str1.Length : str2.Length;
         }
 
         public int Sum(int[] numbers)
         {
-            throw new NotImplementedException();
+            var sum = 0;
+            if (numbers != null)
+            {
+                foreach (var n in numbers)
+                {
+                    sum += n;
+                }
+            }
+            return sum;
         }
 
         public int SumEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            var sum = 0;
+            if (numbers != null)
+            {
+                foreach (var n in numbers)
+                {
+                    sum += n % 2 == 0 ? n : 0;
+                }
+            }
+            return sum;
         }
 
         public bool IsSumOdd(List<int> numbers)
         {
-            throw new NotImplementedException();
+            var sum = 0;
+            if (numbers != null)
+            {
+                foreach (var n in numbers)
+                {
+                    sum += n;
+                }
+            }
+            return sum % 2 == 0 ? false : true;
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            throw new NotImplementedException();
+            return number > 0 ? number / 2 : 0;
         }
     }
 }
