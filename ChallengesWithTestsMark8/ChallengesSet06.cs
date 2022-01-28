@@ -23,7 +23,6 @@ namespace ChallengesWithTestsMark8
                             return true;
                         }
                     }
-                    
                 }
             }
             else
